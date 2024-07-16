@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Slider Lightbox</title>
+  </head>
+  <body>
+    <div class="stsp__container">
+      <!-- Images used to open the lightbox -->
+      <div class="stsp__container__row stsp__container__thumbnail-container">
+        <div class="stsp__container__column">
+          <img
+            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+            onclick="openModal();currentSlide(1)"
+            class="stsp__modal__hover-shadow"
+          />
+        </div>
+        <div class="stsp__container__column">
+          <img
+            src="https://www.w3schools.com/howto/img_snow_wide.jpg"
+            onclick="openModal();currentSlide(2)"
+            class="stsp__modal__hover-shadow"
+          />
+        </div>
+        <div class="stsp__container__column">
+          <img
+            src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+            onclick="openModal();currentSlide(3)"
+            class="stsp__modal__hover-shadow"
+          />
+        </div>
+        <div class="stsp__container__column">
+          <img
+            src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+            onclick="openModal();currentSlide(4)"
+            class="stsp__modal__hover-shadow"
+          />
+        </div>
+      </div>
+
+      <!-- The Modal/Lightbox -->
+      <div id="stsp__modal" class="stsp__modal">
+        <span class="stsp__modal__close cursor" onclick="closeModal()"
+          >&times;</span
+        >
+        <div class="stsp__modal__content">
+          <div class="stsp__modal__slides">
+            <div class="stsp__modal__numbertext">1 / 4</div>
+            <img
+              src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="stsp__modal__slides">
+            <div class="stsp__modal__numbertext">2 / 4</div>
+            <img
+              src="https://www.w3schools.com/howto/img_snow_wide.jpg"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="stsp__modal__slides">
+            <div class="stsp__modal__numbertext">3 / 4</div>
+            <img
+              src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="stsp__modal__slides">
+            <div class="stsp__modal__numbertext">4 / 4</div>
+            <img
+              src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+              style="width: 100%"
+            />
+          </div>
+
+          <!-- Next/previous controls -->
+          <a class="stsp__modal__prev" onclick="plusSlides(-1)"
+            ><span>&#10094;</span></a
+          >
+          <a class="stsp__modal__next" onclick="plusSlides(1)"
+            ><span>&#10095;</span></a
+          >
+
+          <!-- Caption text -->
+          <div class="stsp__modal__caption-container">
+            <p id="caption"></p>
+          </div>
+        </div>
+        <!-- Thumbnail image controls -->
+        <div class="stsp__modal__demo-container">
+          <div class="stsp__modal__item">
+            <img
+              class="stsp__modal__demo"
+              src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+              onclick="currentSlide(1)"
+              alt="Nature"
+            />
+          </div>
+
+          <div class="stsp__modal__item">
+            <img
+              class="stsp__modal__demo"
+              src="https://www.w3schools.com/howto/img_snow_wide.jpg"
+              onclick="currentSlide(2)"
+              alt="Snow"
+            />
+          </div>
+
+          <div class="stsp__modal__item">
+            <img
+              class="stsp__modal__demo"
+              src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+              onclick="currentSlide(3)"
+              alt="Mountains"
+            />
+          </div>
+
+          <div class="stsp__modal__item">
+            <img
+              class="stsp__modal__demo"
+              src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGxpdmluZyUyMHJvb218ZW58MHx8fHwxNjI5NjUzODQ0&ixlib=rb-1.2.1&q=80&w=400"
+              onclick="currentSlide(4)"
+              alt="Lights"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
