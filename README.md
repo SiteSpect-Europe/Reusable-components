@@ -8,3 +8,5 @@
 ## JavaScript Cases
 
 - [Adding an element based on productId](https://github.com/SiteSpect-Europe/Reusable-components/tree/main/Adding-based-on-id)
+
+- [Popup window (server side)](https://github.com/SiteSpect-Europe/Reusable-components/tree/main/popup-window)
