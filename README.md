@@ -4,6 +4,7 @@
 
 - [Image Slider Lightbox](https://github.com/SiteSpect-Europe/Reusable-components/tree/main/image-slider-lightbox).
 - [Sticky mobile button](https://github.com/SiteSpect-Europe/Reusable-components/tree/main/mobile-sticky-button).
+- [Discount Euro Snowflake falling animation](https://github.com/SiteSpect-Europe/Reusable-components/tree/main/Snowflake-Euro).
 
 ## JavaScript Cases
 
